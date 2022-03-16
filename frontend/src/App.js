@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import { useState } from "react";
 
@@ -46,9 +45,9 @@ function App() {
 
             {returnLongURL ?
                 <div>
-                    <p>Original URL: <a href={returnLongURL} target="_blank" className='url'>{returnLongURL}</a></p>
+                    <p>Original URL: <a href={returnLongURL} target="_blank" rel="noreferrer" className='url'>{returnLongURL}</a></p>
                     <p>
-                        Shortened URL: <a href={shorturl} target="_blank" className='url'>{shorturl}</a>
+                        Shortened URL: <a href={shorturl} target="_blank" rel="noreferrer" className='url'>{shorturl}</a>
                     </p>
                 </div>
                 : <div />}
