@@ -1,5 +1,6 @@
 # URL-Shortener
 
+<img src="image.png" alt="image">
 This web app converts long urls into short urls. 
 
 ## How to run
@@ -9,6 +10,7 @@ This web app converts long urls into short urls.
    git clone https://github.com/colin-ho/URL-Shortener.git
    ```
 3. Run `docker-compose up`
+4. Open the app at http://localhost:3000/
 
 ## Details
 This app uses 3 services:
