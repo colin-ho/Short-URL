@@ -1,23 +1,17 @@
-# docker-compose django react postgres
+# URL-Shortener
 
-Starter project for fast bootstrapping Django, React (CRA) and Postgres apps, runs with docker and docker-compose.
+This web app converts long urls into short urls. 
 
-## Installation
+## How to run
 1. [Install docker compose](https://docs.docker.com/compose/install/)
 2. Clone this repository
    ```bash
-   git clone https://github.com/naorye/docker-compose-django-react-postgres.git myapp
+   git clone https://github.com/colin-ho/URL-Shortener.git
    ```
 3. Run `docker-compose up`
 
 ## Details
-This app include 3 services:
-1. Postgres - simple postgres service
-2. Backend - Django with initialized app name "myapp"
-3. Frontend - [Create React App](https://github.com/facebook/create-react-app) application
-
-## Contributing
-Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-## License
-[MIT](https://choosealicense.com/licenses/mit/)
+This app uses 3 services:
+1. Database - PostgreSQL to store the shortened urls.
+2. Backend - Django to provide api for shortening and redirecting.
+3. Frontend - React (create-react-app) for front-end UI.
