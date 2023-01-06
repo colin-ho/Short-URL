@@ -1,44 +1,115 @@
-.App {
-  text-align: center;
-  background-color: rgb(248, 248, 249);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-size: calc(10px + 2vmin);
-  color: #6261b5;
-  padding-top: 10%;
-}
-
-#submitbutton{
-    background-color: #6261b5;
-    color:white;
-    border: none;
-    border-radius:5px;
-    padding:10px;
-    cursor:pointer;
-}
-
-#inputCont{
-    display:flex;
-    gap:15px;
-    width:40%;
+.Page {
+    background-color: rgb(248, 248, 249);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin-left: auto;
-    margin-right: auto;
+    padding-left: 5%;
+    padding-right: 5%;
+    letter-spacing: 1px;
 }
 
-input{
-    border:none;
-    border-radius:5px;
-    box-shadow: 0px 16px 50px rgba(0, 0, 0, 0.07);
-    flex:1;
-    padding:10px;
+.form {
+    min-width: 100%;
 }
 
-.url{
-    padding-left: 10px;
-    color:grey;
-    text-decoration: underline;
+h2 {
+    color: #303030;
+}
+
+input {
+    background-color: transparent;
+    border-width: 0px;
+    font-size: large;
+    color: #707070;
+    font-family: inherit;
+    width: 100%;
+    padding: 0;
+}
+
+input:focus {
+    outline: none;
+}
+
+.forwardButton {
+    margin-top: 10px;
+    align-self: flex-end;
+    border-width: 0px;
+    background-color: transparent;
+    font-size: x-large;
     cursor: pointer;
+}
+
+.backwardButton {
+    align-self: flex-start;
+    border-width: 0px;
+    background-color: transparent;
+    font-size: x-large;
+    cursor: pointer;
+    margin-right: 2%;
+}
+
+.retryButton {
+    align-self: flex-end;
+    border-width: 0px;
+    background-color: transparent;
+    font-size: xx-large;
+    cursor: pointer;
+    color: #707070;
+}
+
+.pathInput {
+    width: 100%;
+    display: flex;
+}
+
+p {
+    display: inline-block;
+    text-align: right;
+    font-size: large;
+    margin: 0;
+    padding: 0;
+    padding-right: 2px;
+    color: #505050;
+}
+
+.result {
+    width: 100%;
+    display: flex;
+    gap: 5px;
+}
+
+.longUrl {
+    display: block;
+    overflow-y: hidden;
+    overflow-x: auto;
+    width: 100%;
+    white-space: nowrap;
+}
+
+.longUrl::-webkit-scrollbar {
+    display: none;
+}
+
+.longUrl {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+a {
+    color: #303030;
+    overflow-wrap: break-word;
+}
+
+.error {
+    color: #ff8484;
+}
+
+.switchPageButton {
+    position: fixed;
+    border-width: 0px;
+    background-color: transparent;
+    cursor: pointer;
+    right: 5%;
+    top: 5%;
 }

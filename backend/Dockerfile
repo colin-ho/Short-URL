@@ -1,11 +1,14 @@
 FROM python:3.8-alpine3.15
 
+# This keeps Python from buffering stdin/stdout
 ENV PYTHONUNBUFFERED 1
+
+# This prevents Python from writing out pyc files
 ENV PYTHONDONTWRITEBYTECODE 1
 
 WORKDIR /app/backend
 
-COPY requirements.txt /app/backend/
+COPY requirements.txt .
 
 RUN apk add --no-cache \
     ca-certificates gcc postgresql-dev linux-headers musl-dev \
@@ -15,10 +18,5 @@ RUN pip install -U pip
 
 RUN pip install -r requirements.txt
 
-COPY api api
+COPY . .
 
-COPY backend backend
-
-COPY manage.py /app/backend/
-
-EXPOSE 8000

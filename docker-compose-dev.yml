@@ -1,6 +1,24 @@
 version: "3"
 
 services:
+  rabbit:
+    image: rabbitmq
+    restart: always
+    environment:
+      - RABBITMQ_DEFAULT_USER=rabbit
+      - RABBITMQ_DEFAULT_PASS=rabbit
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+
+  cache:
+    image: memcached
+    ports:
+      - "11211:11211"
+    entrypoint:
+      - memcached
+      - -m 64
+
   db:
     image: postgres
     volumes:
@@ -14,20 +32,23 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+    depends_on:
+      - cache
+      - rabbit
 
   backend:
     build: ./backend
-    volumes:
-      - ./backend:/app/backend
     ports:
       - "8000:8000"
+    volumes:
+      - ./backend:/app/backend
     environment:
       - POSTGRES_NAME=postgres
       - POSTGRES_USER=postgres
       - POSTGRES_PASSWORD=postgres
-    stdin_open: true
-    tty: true
-    command: sh -c "python3 manage.py migrate && python3 manage.py runserver 0.0.0.0:8000"
+      - RABBITMQ_DEFAULT_USER=rabbit
+      - RABBITMQ_DEFAULT_PASS=rabbit
+    command: sh -c "python3 manage.py migrate && celery -A backend worker -l info --detach && python3 manage.py runserver 0.0.0.0:8000"
     depends_on:
       db:
         condition: service_healthy
@@ -36,12 +57,9 @@ services:
     build: ./frontend
     volumes:
       - ./frontend:/app/frontend
-      # One-way volume to use node_modules from inside image
       - /app/frontend/node_modules
     ports:
       - "3000:3000"
-    environment:
-      - NODE_ENV=development
     depends_on:
       - backend
-    command: npm start
+    command: npm run start
