@@ -1,5 +1,5 @@
-# URL-Shortener
-Convert long urls into short urls.
+# Stacked-URLs
+Convert long urls into short urls. With added backend complexity for a production-ready build.
 <p>
 <img src="landing.png" alt="landing" width="70%">
 </p>
