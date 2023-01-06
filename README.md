@@ -10,7 +10,7 @@ Convert long urls into short urls. With added backend complexity for a productio
 - Choose a custom path name for the short url, i.e. 127.0.0.1/mypathname
 
 - Measure the amount of times a short url was used
-<p align="center">
+<p float="left">
    <img src="pathselect.png" alt="landing" width="33%">
    <img src="result.png" alt="landing" width="33%">
    <img src="clicks.png" alt="landing" width="33%">
