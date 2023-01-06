@@ -1,7 +1,7 @@
 # Short-URL
 Convert long urls into short urls. With added backend complexity for a production-ready build.
 <p>
-<img src="landing.png" alt="landing" width="70%">
+<img src="images/landing.png" alt="landing" width="70%">
 </p>
 
 
@@ -11,9 +11,9 @@ Convert long urls into short urls. With added backend complexity for a productio
 
 - Measure the amount of times a short url was used
 <p float="left">
-   <img src="pathselect.png" alt="landing" width="33%">
-   <img src="result.png" alt="landing" width="33%">
-   <img src="clicks.png" alt="landing" width="33%">
+   <img src="images/pathselect.png" alt="landing" width="33%">
+   <img src="images/result.png" alt="landing" width="33%">
+   <img src="images/clicks.png" alt="landing" width="33%">
 </p>
 
 
