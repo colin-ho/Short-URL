@@ -1,4 +1,4 @@
-# Stacked-URLs
+# Short-URL
 Convert long urls into short urls. With added backend complexity for a production-ready build.
 <p>
 <img src="landing.png" alt="landing" width="70%">
